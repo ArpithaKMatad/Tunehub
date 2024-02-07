@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+   body
+   {  
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url('imag9.jpg');
+      background-size: cover;
+      background-position: center;
+      flex-direction:column;
+      text-align: center;
+      background-attachment: contain;
+      background-size: 100% 100%;
+      font-size: 35px;
+   }
+   .hbox
+   {
+       border:1px solid #ccc;
+       padding: 15px;
+       text-align: center;
+       width: 500px;
+       background-color: blue;
+       
+   }
+   .button
+   { 
+      display:inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #007bff;
+      border:1px solid  #007bff;
+      border-radius: 5px;
+      color: blue;
+   }
+   .button:hover
+   {
+      background-color: red;
+      border-color: #0056b3
+   }
+   h1
+   {
+   color: white;
+   }
+  
+   
+</style>
+</head>
+<body>
+    <div class="hbox">
+    <form action="addPlaylist" method="post">
+    <label>Playlist name:</label>
+    <input type="text" name="name"/>
+    <br/>
+    <br/>
+    <div th:each="song:${songs}">
+    <input type="checkbox" th:name="songs" th:value="${song.id}"/>
+    <label th:text="${song.name}"></label>
+  </div>
+    
+    <input type="submit" value="ADD PLAYLIST" />
+</form>
+ </div>
+</body>
+</html>

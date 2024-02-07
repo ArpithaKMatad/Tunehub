@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   body
+   { 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height:50vh;
+      margin:0;
+      flex-direction:column;
+      background: rgb(128, 128, 0);
+    }
+    
+     th,td
+   { 
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+      width: 50px;
+  
+   }
+   th
+   { 
+      background-color: #f2f2f2;
+   }
+  
+   .non-premium
+   { 
+      border:2px solid #3498db;
+      padding:20px;
+      border-radius: 10px;
+      display: block;
+      margin-top: 10px;
+      width:30%;
+      box-shadow:0 4px 8px rgba(0,0,0,0.1);
+      font-size: 20px;
+      text-align: center;
+    }
+    h1{
+    font-size: 40px;
+    color: blue;
+    }
+    a
+    {
+    font-size: 20px;
+    }
+     div
+   {
+      border:2px solid rgb(255, 255, 255);
+      padding:20px;
+      border-radius: 10px;
+      width:50%;
+      box-shadow:0 4px 8px rgba(0,0,0,0.1);
+     
+   }
+    
+    
+</style>
+</head>
+<h1>Welcome to Customer Home</h1>
+<body>
+
+<div th:unless="${isPremium}" class="non-premium">
+      <a href="pay">GET PREMIUM</a>
+      <p>If you want to become a premium user click on the premium button and become a premium user.</p>
+      <br/><br/>
+      <a href="logout">LOGOUT</a>
+      <p>If you don't want to get premium you can logout.</p>
+      <br/><br/>
+      <a href="login">LOGIN</a>
+      <p>If you completed the payment please login here..</p>
+      </div>
+       
+  <div th:if="${isPremium}" class="premium">
+     <table border>
+     <thead>
+      <tr>
+        <th>Name</th>
+        <th>Artist</th>
+        <th>Genre</th>
+        <th>Play</th>
+     </tr>
+    </thead>
+<tbody>
+<tr th:each="song:${songs}">
+<td th:text="${song.name}"></td>
+<td th:text="${song.artist}"></td>
+<td th:text="${song.genre}"></td>
+<td>
+<audio controls>
+<source th:src="${song.link}" type="audio/mpeg">
+</audio>
+</td>
+</tr>
+</tbody>
+
+</table>
+  </div>
+</body>
+</html>

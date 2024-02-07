@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+       <style type="text/css">
+          
+  body
+  {   
+     font-family:Arial,sans-serif;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+     margin:0;
+     background-color:#f4f4f4;
+     background: url('imag14.jpg') no-repeat;
+     background-size: 100% 100%;
+     font-size: 30px;
+     background-position: contain;
+     
+  }
+  .container
+  { 
+    text-align: center;
+  }
+  a
+  { 
+      display: block;
+      margin:10px;
+      padding:10px;
+      text-decoration: none;
+      color:#007bff;
+      border:1px solid #007bff;
+      border-radius: 5px;
+  }
+  a:hover
+  {
+     background-color: #007bff;
+     color:#fff;
+  }
+  h1
+  {
+  color: white
+  }
+       </style>
+</head>
+<body>
+
+</head>
+<body>
+<table border>
+<thead>
+<tr>
+       <th>Name</th>
+       <th>Songs</th>
+      
+</tr>
+</thead>
+<tbody>
+       <tr th:each="playlist:${allPlaylists}">
+       <td th:text="${playlist.name}"></td>
+       <td >
+       <ul>
+       <li th:each="song:${playlist.songs}" >
+       <span th:text="${song.name}"></span>
+       <audio controls>
+           <source th:src="${song.link}" type="audio/mpeg">
+           </audio>
+           </li>
+       
+       </ul></td>
+       
+      </tr>
+        
+</tbody>
+</table>
+</body>
+</html>

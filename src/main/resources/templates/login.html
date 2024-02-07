@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+     <style>
+    body
+   {  
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url('img12.jpg');
+      background-size: cover;
+      background-position: center;
+      flex-direction:column;
+      text-align: center;
+      background-attachment: contain;
+      background-size: 100% 100%;
+      font-size: 35px;
+   }
+   .hbox
+   {
+       border:1px solid #ccc;
+       padding: 15px;
+       text-align: center;
+       width: 500px;
+       background-color: rgba(255,255,255,0.8);
+   }
+   .button
+   { 
+      display:inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #007bff;
+      border:1px solid  #007bff;
+      border-radius: 5px;
+      color: blue;
+   }
+   .button:hover
+   {
+      background-color: red;
+      border-color: #0056b3
+   }
+   h1
+   {
+   color: white;
+   }
+     </style>
+</head>
+<body>
+<h1>User Login</h1>
+<div class="hbox">
+<form action="validate" method="post">
+<label>Email ID:</label>
+<input type="email" name="email"/>
+<br/><br/>
+<label>Password:</label>
+<input type="password" name="password"/>
+<br/><br/>
+<input type="submit" value="LOGIN">
+</form>
+</div>
+</body>
+</html>

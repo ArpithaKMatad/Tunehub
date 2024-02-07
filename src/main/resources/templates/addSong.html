@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+   body
+   {  
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url('imag8.jpg');
+      background-size: cover;
+      background-position: center;
+      flex-direction:column;
+      text-align: center;
+      background-attachment: contain;
+      background-size: 100% 100%;
+      font-size: 35px;
+   }
+   .hbox
+   {
+       border:1px solid #ccc;
+       padding: 15px;
+       text-align: center;
+       width: 500px;
+       background-color: blue;
+   }
+   .button
+   { 
+      display:inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #007bff;
+      border:1px solid  #007bff;
+      border-radius: 5px;
+       color:#007bff;
+   }
+   .button:hover
+   {
+      background-color: red;
+      border-color: #0056b3
+   }
+   h1
+   {
+   color: white;
+   }
+  
+   
+</style>
+</head>
+<body>
+<div class="hbox">
+<h1>Add New Song</h1>
+<form action="addSong" method="post">
+<label>Song Name:</label>
+<input type="text" name="name">
+<br/>
+<br/>
+<label>Song Artist:</label>
+<input type="text" name="artist">
+<br/>
+<br/>
+<label>Song Genre:</label>
+<input type="text" name="genre">
+<br/>
+<br/>
+<label>Song Link:</label>
+<input type="text" name="link">
+<br/>
+<br/>
+<input type="submit" value="ADD SONG">
+</form>
+</div>
+</body>
+</html>
